@@ -73,10 +73,10 @@ Login-AzAccount
 
 #endregion
 
-#region
+#region Assign permissions for identity to distribute images
 
-    $aibRoleImageCreationUrl="https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/12_Creating_AIB_Security_Roles/aibRoleImageCreation.json"
-    $aibRoleImageCreationPath = "aibRoleImageCreation.json"
+    $aibRoleImageCreationUrl="https://raw.githubusercontent.com/Lagler-Gruener/PSScripts/Dev/Az-ImageBuilder/ARM/CreateImageRole.json"
+    $aibRoleImageCreationPath = "CreateImageRole.json"
 
     # download config
     Invoke-WebRequest -Uri $aibRoleImageCreationUrl -OutFile $aibRoleImageCreationPath -UseBasicParsing
@@ -86,11 +86,29 @@ Login-AzAccount
     ((Get-Content -path $aibRoleImageCreationPath -Raw) -replace 'Azure Image Builder Service Image Creation Role', $imageRoleDefName) | Set-Content -Path $aibRoleImageCreationPath
 
     # create role definition
-    New-AzRoleDefinition -InputFile  ./aibRoleImageCreation.json
+    New-AzRoleDefinition -InputFile  ./CreateImageRole.json
 
     # grant role definition to image builder service principal
     New-AzRoleAssignment -ObjectId $idenityNamePrincipalId -RoleDefinitionName $imageRoleDefName -Scope "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"
 
-    ### NOTE: If you see this error: 'New-AzRoleDefinition: Role definition limit exceeded. No more r
+#endregion
+
+
+
+#region Download and update template
+
+    # update AIB image config template
+    $templateUrl="https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/0_Creating_a_Custom_Windows_Managed_Image/helloImageTemplateWin01.json"
+    $templateFilePath = "helloImageTemplateWin01.json"
+
+    # download configs
+    Invoke-WebRequest -Uri $templateUrl -OutFile $templateFilePath -UseBasicParsing
+
+    ((Get-Content -path $templateFilePath -Raw) -replace '<subscriptionID>',$subscriptionID) | Set-Content -Path $templateFilePath
+    ((Get-Content -path $templateFilePath -Raw) -replace '<rgName>',$imageResourceGroup) | Set-Content -Path $templateFilePath
+    ((Get-Content -path $templateFilePath -Raw) -replace '<region>',$location) | Set-Content -Path $templateFilePath
+    ((Get-Content -path $templateFilePath -Raw) -replace '<runOutputName>',$runOutputName) | Set-Content -Path $templateFilePath
+    ((Get-Content -path $templateFilePath -Raw) -replace '<imageName>',$imageName) | Set-Content -Path $templateFilePath
+    ((Get-Content -path $templateFilePath -Raw) -replace '<imgBuilderId>',$idenityNameResourceId) | Set-Content -Path $templateFilePath
 
 #endregion

@@ -94,12 +94,11 @@ Login-AzAccount
 #endregion
 
 
-
 #region Download and update template
 
     # update AIB image config template
-    $templateUrl="https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/0_Creating_a_Custom_Windows_Managed_Image/helloImageTemplateWin01.json"
-    $templateFilePath = "helloImageTemplateWin01.json"
+    $templateUrl="https://raw.githubusercontent.com/Lagler-Gruener/PSScripts/Dev/Az-ImageBuilder/ARM/WinSrvImage.json"
+    $templateFilePath = "WinSrvImage.json"
 
     # download configs
     Invoke-WebRequest -Uri $templateUrl -OutFile $templateFilePath -UseBasicParsing
@@ -110,5 +109,13 @@ Login-AzAccount
     ((Get-Content -path $templateFilePath -Raw) -replace '<runOutputName>',$runOutputName) | Set-Content -Path $templateFilePath
     ((Get-Content -path $templateFilePath -Raw) -replace '<imageName>',$imageName) | Set-Content -Path $templateFilePath
     ((Get-Content -path $templateFilePath -Raw) -replace '<imgBuilderId>',$idenityNameResourceId) | Set-Content -Path $templateFilePath
+
+    New-AzResourceGroupDeployment -ResourceGroupName $imageResourceGroup -TemplateFile $templateFilePath -api-version "2019-05-01-preview" -imageTemplateName $imageTemplateName -svclocation $location
+
+#endregion
+
+#region Build the image
+
+    Invoke-AzResourceAction -ResourceName $imageTemplateName -ResourceGroupName $imageResourceGroup -ResourceType Microsoft.VirtualMachineImages/imageTemplates -ApiVersion "2019-05-01-preview" -Action Run -Force
 
 #endregion

@@ -161,10 +161,10 @@ function get-msgraphtoken
 
 #Get user delegated token
 $token = get-msgraphtoken -Connectiontype delegated `
-                          -UserUPN "demo1@lagler-gruener.at" `
-                          -AppId "775c0a92-f072-4e8e-a1c6-fb1b37dfcc4f" `
+                          -UserUPN "" `
+                          -AppId "" `
                           -AppSecred "Null" `
-                          -Tenant "laglerh.onmicrosoft.com"
+                          -Tenant ""
 
 # You get an error (403) Forbidden
 $url = "https://graph.microsoft.com/v1.0/users"         
@@ -199,10 +199,10 @@ foreach ($user in $response.value)
 
 #Get user delegated token with admin consent
 $token = get-msgraphtoken -Connectiontype delegatedwithadminconsent `
-                          -UserUPN "demouser1@lagler-gruener.at" `
-                          -AppId "775c0a92-f072-4e8e-a1c6-fb1b37dfcc4f" `
+                          -UserUPN "" `
+                          -AppId "" `
                           -AppSecred "Null" `
-                          -Tenant "laglerh.onmicrosoft.com"
+                          -Tenant ""
 
 # Work fine
 $url = "https://graph.microsoft.com/v1.0/users"         
@@ -239,9 +239,9 @@ foreach ($user in $response.value)
 #Get application token
 $token = get-msgraphtoken -Connectiontype application `
                           -UserUPN "Null" `
-                          -AppId "3f97610b-da2d-4dcd-aea3-075666ce5800" `
-                          -AppSecred "6m~SUi6bxao1bcUkGg3rc.9S3ziI.6_x2y" `
-                          -Tenant "acpdemot.onmicrosoft.com"
+                          -AppId "" `
+                          -AppSecred "" `
+                          -Tenant "m"
              
              
  # Work fine

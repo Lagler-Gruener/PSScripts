@@ -241,7 +241,7 @@ $token = get-msgraphtoken -Connectiontype application `
                           -UserUPN "Null" `
                           -AppId "" `
                           -AppSecred "" `
-                          -Tenant "m"
+                          -Tenant ""
              
              
  # Work fine
@@ -255,7 +255,7 @@ foreach ($user in $response.value)
     Write-Host "Surename: $($user.surname)"
     Write-Host "#########################"
     Write-Host " "
-}
+} 
 
 #endregion
 

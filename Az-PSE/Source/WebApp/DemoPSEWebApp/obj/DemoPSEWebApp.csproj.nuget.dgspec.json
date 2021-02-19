@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VSCode\\LaglerGruenerGitHub\\AzurePSScripts\\AzurePSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj": {}
+    "C:\\GitRepos\\Priv\\PSScripts\\Az-PSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj": {}
   },
   "projects": {
-    "C:\\VSCode\\LaglerGruenerGitHub\\AzurePSScripts\\AzurePSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj": {
+    "C:\\GitRepos\\Priv\\PSScripts\\Az-PSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VSCode\\LaglerGruenerGitHub\\AzurePSScripts\\AzurePSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj",
+        "projectUniqueName": "C:\\GitRepos\\Priv\\PSScripts\\Az-PSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj",
         "projectName": "DemoPSEWebApp",
-        "projectPath": "C:\\VSCode\\LaglerGruenerGitHub\\AzurePSScripts\\AzurePSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj",
+        "projectPath": "C:\\GitRepos\\Priv\\PSScripts\\Az-PSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj",
         "packagesPath": "C:\\Users\\laglerjo\\.nuget\\packages\\",
-        "outputPath": "C:\\VSCode\\LaglerGruenerGitHub\\AzurePSScripts\\AzurePSE\\Source\\WebApp\\DemoPSEWebApp\\obj\\",
+        "outputPath": "C:\\GitRepos\\Priv\\PSScripts\\Az-PSE\\Source\\WebApp\\DemoPSEWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laglerjo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

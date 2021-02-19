@@ -43,7 +43,7 @@ function LoginAzureAD()
             Import-Module AzureAD
         }
     
-        Connect-AzureAD       
+        Connect-AzureAD
     }
     catch {
         Write-Error "Error in function Login-Azure. Error message: $($_.Exception.Message)"

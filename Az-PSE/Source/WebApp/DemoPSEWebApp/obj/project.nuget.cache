@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HjtXqgo7T8fmmdUFSNlaCd/WcvN7m9HwgUMdHBG7+J35ruC/4EGtBAgop0WhbjmkJSVjEfA7zIvDl3ox0h+bhw==",
+  "dgSpecHash": "U1R71TB7hMZstYAgi7CVn7A/fZdNqPDk0vmWT5LtvdIAPaAyuy6l8jnveXNJBmfyP+3cQEB5d4zLeGUL5NIOPA==",
   "success": true,
-  "projectFilePath": "C:\\VSCode\\LaglerGruenerGitHub\\AzurePSScripts\\AzurePSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj",
+  "projectFilePath": "C:\\GitRepos\\Priv\\PSScripts\\Az-PSE\\Source\\WebApp\\DemoPSEWebApp\\DemoPSEWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\laglerjo\\.nuget\\packages\\microsoft.azure.keyvault\\3.0.4\\microsoft.azure.keyvault.3.0.4.nupkg.sha512",
     "C:\\Users\\laglerjo\\.nuget\\packages\\microsoft.azure.keyvault.webkey\\3.0.4\\microsoft.azure.keyvault.webkey.3.0.4.nupkg.sha512",
